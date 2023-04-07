@@ -1,0 +1,18 @@
+<%= form_with(model: channel, class: "contents") do |f| %>
+  <% if channel.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(channel.errors.count, "error") %> prohibited this channel from being saved:</h2>
+
+      <ul>
+        <% channel.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-8 flex items-center bg-gray-100 p-2">
+    <%= f.text_field :name, placeholder: 'Channel Name', class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 w-full mr-2", required: true %>
+    <%= f.submit '+', class: "h-10 w-12 rounded-full bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

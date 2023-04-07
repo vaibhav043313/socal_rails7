@@ -1,0 +1,24 @@
+<%= link_to channel do %>
+  <div  class="grid grid-cols-12 gap-y-2" id="<%= dom_id channel %>">
+    <div class="col-start-1 col-end-13 p-3 rounded-lg shadow">
+      <div class="flex flex-row items-center">
+        <div class="flex items-center justify-center h-10 w-10 rounded-full bg-indigo-100 flex-shrink-0">
+          <%= first_letter(channel.name) %>
+        </div>
+        <div class="relative ml-3 text-sm py-2 px-4 rounded flex-grow <%= "font-bold" if channel == current_channel %>">
+          <div><%= channel.name.capitalize %></div>
+        </div>
+      </div>
+    </div>
+<!--   <p class="my-5 <%= "font-bold" if channel == current_channel %>">
+    
+  </p> -->
+
+  <%# if action_name != "show" %>
+    <%#= link_to "Show this channel", channel, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%#= link_to 'Edit this channel', edit_channel_path(channel), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <!-- <hr class="mt-6"> -->
+  <%# end %>
+  </div>
+<% end %>
+<hr>
